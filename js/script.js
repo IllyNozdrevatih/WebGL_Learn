@@ -7,6 +7,8 @@ var InitWebGl = function () {
     })
     .then(function (result) {
         FSText = result
+        console.log('InitWebGl VSText', VSText)
+        console.log('InitWebGl FSText', FSText)
         return StartWebGL(VSText, FSText)
     })
     .catch(function (err) {
@@ -20,8 +22,6 @@ var StartWebGL = function (vertexShaderText, fragmentShaderText) {
 
     canvas.height = gl.canvas.clientHeight;
     canvas.width = gl.canvas.clientWidth;
-
-
     // createShader - возвращает щейдер соотвецтвующего типа
     // gl.VERTEX_SHADER, gl.FRAGMENT_SHADER - тип шейдера
     var vertexShader = gl.createShader(gl.VERTEX_SHADER)
